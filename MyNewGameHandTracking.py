@@ -6,11 +6,11 @@ import HandTrackingModule as htm
 pTime = 0
 cTime = 0
 cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
-detector = handDetector()
+detector = htm.handDetector()
 while True:
     success, img = cap.read()
-    img = detector.findHans(img)
-    lmList = detector.findPosition(img)
+    img = detector.findHans(img, draw=False)
+    lmList = detector.findPosition(img, draw=False)
     if len(lmList) != 0:
         print(lmList[4])
 
