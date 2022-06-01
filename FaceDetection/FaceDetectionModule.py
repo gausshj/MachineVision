@@ -3,7 +3,7 @@ import mediapipe as mp
 import time
 
 
-class FaceDetector():
+class FaceDetector:
     def __init__(self, minDetectionCon=0.5):
         self.minDetectionCon = minDetectionCon
 
@@ -11,7 +11,7 @@ class FaceDetector():
         self.mpDraw = mp.solutions.drawing_utils
         self.faceDetection = self.mpFaceDetection.FaceDetection(self.minDetectionCon)
 
-    def findFace(self, img ,draw=True):
+    def findFace(self, img, draw=True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.faceDetection.process(imgRGB)
         # print(self.results)
